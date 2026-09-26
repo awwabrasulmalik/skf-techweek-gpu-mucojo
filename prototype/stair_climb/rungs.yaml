@@ -1,0 +1,40 @@
+# Gated curriculum: rung0 flat approach -> rung1 low stairs -> rung2 full
+# stairs -> rung3 stairs + turn platform. Promote only on gate.
+# friction: [lo, hi] sampled per-episode by the trainer (step 3); the built
+# scene uses the midpoint. obstacles: explicit {x, h} blocks on approach.
+# NOTE (step-3 hook): stair_env success thresholds assume full stairs;
+# rung0/rung1 need per-rung success terms before training on them.
+promotion_gate: {eval_episodes: 10, min_successes: 7}
+rungs:
+  rung0:
+    desc: "flat approach, learn upright walk"
+    n_steps: 0
+    rise: 0.0
+    run: 0.28
+    friction: [0.8, 1.0]
+    obstacles: []
+    turn: false
+  rung1:
+    desc: "low stairs rise 0.09 + obstacles"
+    n_steps: 5
+    rise: 0.09
+    run: 0.28
+    friction: [0.6, 1.0]
+    obstacles: [{x: -0.8, h: 0.06}, {x: -0.4, h: 0.06}]
+    turn: false
+  rung2:
+    desc: "full stairs rise 0.18 + obstacles + slippery range"
+    n_steps: 5
+    rise: 0.18
+    run: 0.28
+    friction: [0.4, 1.0]
+    obstacles: [{x: -0.8, h: 0.08}, {x: -0.4, h: 0.08}]
+    turn: false
+  rung3:
+    desc: "full stairs + top landing for turn"
+    n_steps: 5
+    rise: 0.18
+    run: 0.28
+    friction: [0.4, 1.0]
+    obstacles: [{x: -0.8, h: 0.08}, {x: -0.4, h: 0.08}]
+    turn: true

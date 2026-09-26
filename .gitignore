@@ -1,0 +1,17 @@
+# venvs / caches (never commit)
+.venv/
+.venv-mjx/
+.jax_cache/
+__pycache__/
+*.pyc
+# bulky / machine-local inputs
+prototype/assets/
+# training artifacts (local only; release ckpts in checkpoints_release/)
+*.log
+runs/
+runs_mjx/
+videos/
+videos_mjx/
+checkpoints/
+checkpoints_mjx/
+checkpoints_release/
