@@ -32,4 +32,17 @@ dense climb shaping, anti-crouch). Gate: 0/10 success, but full
 episodes survived (len 862 vs 258 pre-reshape). Stairs success =
 root x > 3.3 m AND z > 0.95 m (up 5×0.09 m steps + landing).
 
+## Stairs FINAL — 1/10 with a landing (the headline ckpt)
+
+```
+.venv-mjx/bin/python prototype/mjx_track/eval_g1.py \
+  --ckpt checkpoints_release/stairs_final_1of10 \
+  --phase walk --task stairs --command 0.5,0,0 --episodes 10 \
+  --save-traj /tmp/stairs_final_eval.npz
+```
+
+From run `g1_stairs_0926_1535` (+81.1M, anti-crouch + plant
+bonus). Gate: 1/10, mean max_x 2.89 m — episode 5 climbs all
+5 steps onto the landing. Video: `videos_mjx/stairs_final_3d.mp4`.
+
 Full run ledger + reward history: `docs/results.md`, `pitch/pipeline.md`.

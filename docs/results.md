@@ -58,6 +58,7 @@ CPU 1963 fps vs CUDA 1077 fps → CPU 1.8× faster. MLP stays on CPU (SB3 #1245)
 | 2 stairs (run 1426, full collision) | +30.9 M | 0/10, max_x 1.98 m | 257/1000 | `videos_mjx/g1_stairs_0926_1426_eval.mp4` |
 | 2 stairs (run 1444, full collision) | +30.9 M | 0/10, max_x 1.99 m | 258/1000 | `videos_mjx/g1_stairs_0926_1444_eval.mp4` |
 | 2 stairs (run 1508, reshaped+centered) | +30.9 M | 0/10, max_x 2.06 m | 862/1000 | `videos_mjx/g1_stairs_0926_1508_eval.mp4` |
+| 2 stairs Final (run 1535, +anticrouch+plant) | +81.1 M | 1/10, max_x 2.89 m | 602/1000 | `videos_mjx/g1_stairs_0926_1535_eval.mp4` |
 
 Throughput 25–42k steps/s (30× the CPU track). Reward audit + fixes in
 `MJX.md`. Continuing +50 M from last ckpt at 2048 envs.

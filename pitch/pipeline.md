@@ -270,16 +270,19 @@ up >20%) → continue +30M; FLAT twice (same count, max_x within
 | 1444 | stairs | +30.9M | 0/10, 1.99 m — flat ×2, BLOCKED |
 | 1508 | stairs | +30.9M | 0/10, 2.06 m, len 862 — reshape: survives, crouches |
 | 1529 | stairs | 9M (killed) | superseded by plant bonus |
-| 1535 (final) | stairs | 80M | anti-crouch + plant — in flight at write time |
+| 1535 (final) | stairs | +81.1M | **1/10, max_x 2.89 m** — first landing ever (ep 5, h 0.93) |
 
 ---
 
-## 9. Status at write time + what's next
+## 9. Final status + what's next
 
-Walk is a solved rung (10/10, 8/10). Stairs is mid-climb: the
-robot approaches centered, survives full episodes, and the
-final 80M run (anti-crouch + plant bonus + climb shaping) is
-testing whether that converts into actual step mounting. Known
+Walk is a solved rung (10/10, 8/10). Stairs finished **1/10
+with a real landing**: the final 81.1M run (centered spawn,
+climb shaping, anti-crouch, plant bonus) took mean max_x 2.06 →
+2.89 m (+40%) and episode 5 climbed all 5 steps onto the
+landing (h 0.93 m). Below the 7/10 bar — one success in ten,
+not a solved rung — but the reshape chain converted a
+face-plant policy into a mounting policy in a day. Known
 limits: torso has no collision geom; landing bonus still the
 only success signal; sim-only (no sim-to-real transfer yet).
 

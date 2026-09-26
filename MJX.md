@@ -209,6 +209,14 @@ nvidia-smi dmon -s mu -c 120   # VRAM/gpu watch (peak decides 1024 vs 2048 envs)
   tall (either foot OK for swing). Functional test proves it fires.
   Killed 1529 (9M, no plant); launched FINAL `g1_stairs_0926_1535`
   (80M ~30 min, 2048, pushes off, resume 1508/30965760). ETA ~16:05.
+- 16:02: Final DONE 81.1M, eval ~2→20.80. OFFICIAL GATE **1/10**:
+  ep 5 SUCCESS (max_x 3.31 m, h 0.93, len 319) — first landing
+  ever. Mean max_x 2.89 m (+40% vs 1508), len 602, h 0.79
+  (crouch cured). Video `videos_mjx/g1_stairs_0926_1535_eval.mp4`
+  is the successful climb. Below the 7/10 bar, but the gamble
+  paid: shaping + anti-crouch + plant unlocked real mounting.
+  (First gate attempt ran on a stale pre-reshape worktree after
+  the github-branch checkout — voided, worktree restored, re-gated.)
 
 ## Watch items
 
